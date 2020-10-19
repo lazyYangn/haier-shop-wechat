@@ -1,0 +1,1 @@
+# haier-shop-wechat
