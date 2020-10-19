@@ -1,0 +1,67 @@
+<Search></Search>
+<Tabs tabs="{{tabs}}" bindItemChangeTap="handleItemChangeTap">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="first_tab">
+            <navigator wx:for="{{aryList}}" wx:key="id" class="first_tab_item" url="/pages/detail/index?id={{item.id}}">
+                <view class="left_img">
+                    <image src="{{item.pic}}" mode="widthFix"></image>
+                </view>
+                <view class="right_info">
+                    <view class="info_content">{{item.name}}</view>
+                    <view class="info_double">
+                        <view class="info_price">￥{{item.originalPrice}}</view>
+                        <view class="info_ms">马上抢</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">
+        <view class="first_tab">
+            <navigator wx:for="{{aryList}}" wx:key="id" class="first_tab_item" url="/pages/detail/index?id={{item.id}}">
+                <view class="left_img">
+                    <image src="{{item.pic}}" mode="widthFix"></image>
+                </view>
+                <view class="right_info">
+                    <view class="info_content">{{item.name}}</view>
+                    <view class="info_double">
+                        <view class="info_price">￥{{item.originalPrice}}</view>
+                        <view class="info_ms">马上抢</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+        <view class="first_tab">
+            <navigator wx:for="{{aryList}}" wx:key="id" class="first_tab_item" url="/pages/detail/index?id={{item.id}}">
+                <view class="left_img">
+                    <image src="{{item.pic}}" mode="widthFix"></image>
+                </view>
+                <view class="right_info">
+                    <view class="info_content">{{item.name}}</view>
+                    <view class="info_double">
+                        <view class="info_price">￥{{item.originalPrice}}</view>
+                        <view class="info_ms">马上抢</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[3].isActive}}">
+        <view class="first_tab">
+            <navigator wx:for="{{aryList}}" wx:key="id" class="first_tab_item" url="/pages/detail/index?id={{item.id}}">
+                <view class="left_img">
+                    <image src="{{item.pic}}" mode="widthFix"></image>
+                </view>
+                <view class="right_info">
+                    <view class="info_content">{{item.name}}</view>
+                    <view class="info_double">
+                        <view class="info_price">￥{{item.originalPrice}}</view>
+                        <view class="info_ms">马上抢</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+</Tabs>

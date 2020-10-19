@@ -1,0 +1,437 @@
+<SearchInput></SearchInput>
+<!-- 轮播图 -->
+<swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" interval="3000" indicator-active-color="#fff">
+  <swiper-item class="" item-id="" wx:for="{{banners}}" wx:key="id">
+    <navigator>
+      <image mode="widthFix" src="{{item.picUrl}}" />
+    </navigator>
+  </swiper-item>
+</swiper>
+<!-- 轮播图结束 -->
+<!-- 导航栏 -->
+<view class="icons_wrap">
+  <navigator class="icons_item" wx:for="{{iconsList}}" wx:key="id" url="{{item.remark}}">
+    <image src="{{item.icon}}" mode="widthFix"></image>
+    <view class="icon_text">{{item.name}}</view>
+  </navigator>
+</view>
+<!-- 导航栏结束 -->
+<!-- 楼层展示 -->
+<view class="floor_wrap">
+  <navigator class="floor_item" wx:for="{{floorList}}" wx:key="id" url="{{item.remark}}">
+    <image src="{{item.icon}}" mode="widthFix"></image>
+  </navigator>
+</view>
+<!-- 楼层展示结束 -->
+<!-- 商品展示 -->
+<view class="project_show">
+  <!-- 空调展示 -->
+  <view class="project_kt">
+    <view class="kt_title">
+      <view class="kt_title_left">空调</view>
+      <view class="kt_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139954">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="kt_show">
+      <view class="kt_item" wx:for="{{showList.airConditioner}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="kt_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="kt_text">{{item.name}}</view>
+        </navigator>
+        <view class="kt_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" data-index="{{item.id}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 冰箱展示 -->
+  <view class="project_bx">
+    <view class="bx_title">
+      <view class="bx_title_left">冰箱</view>
+      <view class="bx_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139968">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="bx_show">
+      <view class="bx_item" wx:for="{{showList.refrigerator}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="bx_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="bx_text">{{item.name}}</view>
+        </navigator>
+        <view class="bx_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" bindtap="handleAddCartClick" data-index="{{item.id}}"></view>
+        </view>
+        <!-- 底部弹窗 -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="header_wrap">
+            <view class="project_img">
+              <image src="{{bottomShow.pic}}" mode="widthFix"></image>
+            </view>
+            <view class="project_info">
+              <view class="project_price">￥{{bottomShow.originalPrice}}</view>
+              <view class="project_version">
+                已选
+                <text>{{projectColor}}</text>
+              </view>
+            </view>
+            <view class="project_icon">
+              <view class="iconfont icon-cha" bindtap="handleCancelClick"></view>
+            </view>
+          </view>
+          <view class="main_wrap">
+            <view>颜色分类:</view>
+            <view class="color_wrap">{{projectColor}}</view>
+          </view>
+          <view class="footer_wrap">
+            <view class="footer_text">购买数量</view>
+            <view class="footer_tool">
+              <view class="tool_add">-</view>
+              <input type="text" value="1"></input>
+              <view class="tool_del">+</view>
+            </view>
+          </view>
+          <view class="btn_tool">
+            <view class="btn_add">加入购物车</view>
+            <view class="btn_buy">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 洗衣机展示 -->
+  <view class="project_xyj">
+    <view class="xyj_title">
+      <view class="xyj_title_left">洗衣机</view>
+      <view class="xyj_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139994">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="xyj_show">
+      <view class="xyj_item" wx:for="{{showList.washingMachine}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="xyj_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="xyj_text">{{item.name}}</view>
+        </navigator>
+        <view class="xyj_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" bindtap="handleAddCartClick" data-index="{{item.id}}"></view>
+        </view>
+        <!-- 底部弹窗 -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="header_wrap">
+            <view class="project_img">
+              <image src="{{bottomShow.pic}}" mode="widthFix"></image>
+            </view>
+            <view class="project_info">
+              <view class="project_price">￥{{bottomShow.originalPrice}}</view>
+              <view class="project_version">
+                已选
+                <text>{{projectColor}}</text>
+              </view>
+            </view>
+            <view class="project_icon">
+              <view class="iconfont icon-cha" bindtap="handleCancelClick"></view>
+            </view>
+          </view>
+          <view class="main_wrap">
+            <view>颜色分类:</view>
+            <view class="color_wrap">{{projectColor}}</view>
+          </view>
+          <view class="footer_wrap">
+            <view class="footer_text">购买数量</view>
+            <view class="footer_tool">
+              <view class="tool_add">-</view>
+              <input type="text" value="1"></input>
+              <view class="tool_del">+</view>
+            </view>
+          </view>
+          <view class="btn_tool">
+            <view class="btn_add">加入购物车</view>
+            <view class="btn_buy">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 电视展示 -->
+  <view class="project_ds">
+    <view class="ds_title">
+      <view class="ds_title_left">电视</view>
+      <view class="ds_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139955">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="ds_show">
+      <view class="ds_item" wx:for="{{showList.television}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="ds_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="ds_text">{{item.name}}</view>
+        </navigator>
+        <view class="ds_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" bindtap="handleAddCartClick" data-index="{{item.id}}"></view>
+        </view>
+        <!-- 底部弹窗 -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="header_wrap">
+            <view class="project_img">
+              <image src="{{bottomShow.pic}}" mode="widthFix"></image>
+            </view>
+            <view class="project_info">
+              <view class="project_price">￥{{bottomShow.originalPrice}}</view>
+              <view class="project_version">
+                已选
+                <text>{{projectColor}}</text>
+              </view>
+            </view>
+            <view class="project_icon">
+              <view class="iconfont icon-cha" bindtap="handleCancelClick"></view>
+            </view>
+          </view>
+          <view class="main_wrap">
+            <view>颜色分类:</view>
+            <view class="color_wrap">{{projectColor}}</view>
+          </view>
+          <view class="footer_wrap">
+            <view class="footer_text">购买数量</view>
+            <view class="footer_tool">
+              <view class="tool_add">-</view>
+              <input type="text" value="1"></input>
+              <view class="tool_del">+</view>
+            </view>
+          </view>
+          <view class="btn_tool">
+            <view class="btn_add">加入购物车</view>
+            <view class="btn_buy">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 热水器展示 -->
+  <view class="project_rsq">
+    <view class="rsq_title">
+      <view class="rsq_title_left">热水器</view>
+      <view class="rsq_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139980">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="rsq_show">
+      <view class="rsq_item" wx:for="{{showList.waterHeater}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="rsq_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="rsq_text">{{item.name}}</view>
+        </navigator>
+        <view class="rsq_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" bindtap="handleAddCartClick" data-index="{{item.id}}"></view>
+        </view>
+        <!-- 底部弹窗 -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="header_wrap">
+            <view class="project_img">
+              <image src="{{bottomShow.pic}}" mode="widthFix"></image>
+            </view>
+            <view class="project_info">
+              <view class="project_price">￥{{bottomShow.originalPrice}}</view>
+              <view class="project_version">
+                已选
+                <text>{{projectColor}}</text>
+              </view>
+            </view>
+            <view class="project_icon">
+              <view class="iconfont icon-cha" bindtap="handleCancelClick"></view>
+            </view>
+          </view>
+          <view class="main_wrap">
+            <view>颜色分类:</view>
+            <view class="color_wrap">{{projectColor}}</view>
+          </view>
+          <view class="footer_wrap">
+            <view class="footer_text">购买数量</view>
+            <view class="footer_tool">
+              <view class="tool_add">-</view>
+              <input type="text" value="1"></input>
+              <view class="tool_del">+</view>
+            </view>
+          </view>
+          <view class="btn_tool">
+            <view class="btn_add">加入购物车</view>
+            <view class="btn_buy">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 冷柜展示 -->
+  <view class="project_lg">
+    <view class="lg_title">
+      <view class="lg_title_left">冷柜</view>
+      <view class="lg_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139992">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="lg_show">
+      <view class="lg_item" wx:for="{{showList.freezer}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="lg_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="lg_text">{{item.name}}</view>
+        </navigator>
+        <view class="lg_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" bindtap="handleAddCartClick" data-index="{{item.id}}"></view>
+        </view>
+        <!-- 底部弹窗 -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="header_wrap">
+            <view class="project_img">
+              <image src="{{bottomShow.pic}}" mode="widthFix"></image>
+            </view>
+            <view class="project_info">
+              <view class="project_price">￥{{bottomShow.originalPrice}}</view>
+              <view class="project_version">
+                已选
+                <text>{{projectColor}}</text>
+              </view>
+            </view>
+            <view class="project_icon">
+              <view class="iconfont icon-cha" bindtap="handleCancelClick"></view>
+            </view>
+          </view>
+          <view class="main_wrap">
+            <view>颜色分类:</view>
+            <view class="color_wrap">{{projectColor}}</view>
+          </view>
+          <view class="footer_wrap">
+            <view class="footer_text">购买数量</view>
+            <view class="footer_tool">
+              <view class="tool_add">-</view>
+              <input type="text" value="1"></input>
+              <view class="tool_del">+</view>
+            </view>
+          </view>
+          <view class="btn_tool">
+            <view class="btn_add">加入购物车</view>
+            <view class="btn_buy">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 厨电展示 -->
+  <view class="project_cd">
+    <view class="cd_title">
+      <view class="cd_title_left">厨电</view>
+      <view class="cd_title_right">
+        <navigator class="right_text" url="/pages/list/index?id=139979">查看更多</navigator>
+        <view class="right_icon iconfont icon-playfill"></view>
+      </view>
+    </view>
+    <view class="cd_show">
+      <view class="cd_item" wx:for="{{showList.kitchenAppliance}}" wx:key="id">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="cd_img">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="cd_text">{{item.name}}</view>
+        </navigator>
+        <view class="cd_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart" bindtap="handleAddCartClick" data-index="{{item.id}}"></view>
+        </view>
+        <!-- 底部弹窗 -->
+        <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+          <view class="header_wrap">
+            <view class="project_img">
+              <image src="{{bottomShow.pic}}" mode="widthFix"></image>
+            </view>
+            <view class="project_info">
+              <view class="project_price">￥{{bottomShow.originalPrice}}</view>
+              <view class="project_version">
+                已选
+                <text>{{projectColor}}</text>
+              </view>
+            </view>
+            <view class="project_icon">
+              <view class="iconfont icon-cha" bindtap="handleCancelClick"></view>
+            </view>
+          </view>
+          <view class="main_wrap">
+            <view>颜色分类:</view>
+            <view class="color_wrap">{{projectColor}}</view>
+          </view>
+          <view class="footer_wrap">
+            <view class="footer_text">购买数量</view>
+            <view class="footer_tool">
+              <view class="tool_add">-</view>
+              <input type="text" value="1"></input>
+              <view class="tool_del">+</view>
+            </view>
+          </view>
+          <view class="btn_tool">
+            <view class="btn_add">加入购物车</view>
+            <view class="btn_buy">立即购买</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 商品展示结束 -->
+<!-- 底部信息 -->
+<view class="footer_info">感受智慧生活 共创无限美好</view>
+<!-- 底部信息结束 -->
+<!-- 底部图片 -->
+<view class="footer_img">
+  <image mode="widthFix" src="https://ae01.alicdn.com/kf/H48dab3335c264b4d8bab9df76b05f0fdw.jpg"></image>
+</view>
+<!-- 底部图片结束 -->
+<!-- 页面侧边栏 -->
+<view class="aside_wrap">
+  <view class="aside_kefu">
+    <view class="iconfont icon-kefu"></view>
+    <button open-type="contact" bindcontact="handleContact"></button>
+  </view>
+  <view class="aside_tool {{isShowAside?'backColor2':'backColor1'}}">
+    <view class="iconfont {{isShowAside?'icon-cha':'icon-jia'}} " bindtap="handleClick"></view>
+  </view>
+</view>
+<!-- 页面侧边栏结束 -->
+<block wx:if="{{isShowAside}}">
+  <view class="aside_content">
+    <navigator class="content_item" url="/pages/cart/index" open-type="switchTab">
+      <view class="iconfont icon-cart"></view>
+    </navigator>
+    <view class="content_item share">
+      <view class="iconfont icon-fenxiang_2"></view>
+      <button open-type="share"></button>
+    </view>
+    <navigator class="content_item" url="/pages/user/index" open-type="switchTab">
+      <view class="iconfont icon-yonghu"></view>
+    </navigator>
+    <view class="content_item" bindtap="goTop">
+      <view class="iconfont icon-dingbu"></view>
+    </view>
+  </view>
+</block>

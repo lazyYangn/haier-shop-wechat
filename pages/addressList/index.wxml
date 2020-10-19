@@ -1,0 +1,17 @@
+<view class="address_list_wrap">
+    <view class="address_item" wx:for="{{addressList}}" wx:key="index">
+        <view class="item_isDefault" bindtap="handleItemChange" data-id="{{item.id}}">
+            <icon wx:if="{{item.isDefault}}" class='cart-icon' type="success" color="red" />
+            <icon wx:else type="circle" class='cart-icon' />
+        </view>
+        <view class="item_left">
+            <view class="left_title">{{item.linkMan}} {{item.mobile}}</view>
+            <view class="left_address">{{item.provinceId+item.cityId+item.address}}</view>
+        </view>
+        <view class="item_right">
+            <view class="iconfont icon-xiugai" bindtap="addressModify" data-id="{{item.id}}" data-index="{{index}}"></view>
+            <view class="iconfont icon-shanchu" bindtap="addressRemove" data-id="{{item.id}}"></view>
+        </view>
+    </view>
+</view>
+<button bindtap="addAddress">新增地址</button>

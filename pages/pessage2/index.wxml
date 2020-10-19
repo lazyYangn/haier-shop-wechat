@@ -1,0 +1,77 @@
+<view class="title_wrap">打造春日舒适家居生活，尽在海尔家电!</view>
+<view class="date_wrap">4月10日</view>
+<view class="synopsis_wrap">
+  如今正处于换季的尴尬季节，大家生活中很多方面都悄然发生
+着改变。吃的东西变多了，洗澡的时候水温调高了一点儿，换
+洗的衣服也增加了...这时候没有好用的电器来帮忙可不
+行，海尔家电致力为你打造舒适的家居生活，如果你家的冰
+箱、洗衣机或者热水器掉链子了，赶紧来看一下这几款海尔电
+器吧!
+</view>
+<navigator class="project_show" url="{{projectList[0].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[0].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[0].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
+<view class="synopsis_wrap">
+  民以食为天，因此家中有一台好用的冰箱是十 分有必要的，家
+中的冰箱异味大、储存空间不够?没关系，海尔冰箱为你解决
+这些问题。这款海尔双开i ]冰箱有着低温净味系统，能够很好
+地吸附空气中的异味离子，避免冰箱中因存放东西过多而串
+味，轻松除异味就在此刻，有了它，再也不用担心异味问题，
+让你的食材时刻拥有一个健康的储鲜环境。
+冰箱像是一个储存柜，存放着各种我们想吃的食物，换季很多
+人胃口大开，冰箱中储存的各种食物也多了起来。这款海尔冰
+箱有着642L的大容量,去超市买回来一周的东西它都装得下，
+让你省心。家中成员多的朋友们可不能错过这款海尔冰箱，它
+的超大容量满足全家人整周的美食需求。
+</view>
+<navigator class="project_show" url="{{projectList[1].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[1].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[1].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
+<view class="synopsis_wrap">
+  春天即将到来换洗的衣服也多了起来，春天衣服不像夏
+天衣服那样轻薄，因此清洗起来更加麻烦-点，这款海
+尔洗衣机十分好用，它能够对衣服进行消毒清洗，深层
+消毒呵护肌肤，可以将存放了很久的秋季衣服清洗干
+净。它清洗能力强的原因就是内置BLDC变频电机，拥
+有澎湃动力的同时能够安静清洗，平稳又迅速，为你带
+来舒适的体验。
+</view>
+<navigator class="project_show" url="{{projectList[2].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[2].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[2].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
+<view class="synopsis_wrap">
+  要说回家最舒服的事情，莫过于洗一场热水澡，你家的
+热水器经常热水不够用?来看看这款海尔热水器，它的
+加热效率要比一般的热水器更高，水温可以快速提升，
+为你带来加倍水量，再也不用担心热水不够的问题。而
+且它还有预约洗浴功能，回家前提前预约好，回到家后
+立刻就可以享受到舒适的热水澡，无需等待，太方便
+了。
+看了这几款海尔电器你是不是很心动了呢?海尔电器是你生活
+的好助手，能够为你营造一个 舒适的春日家居环境，用了才知
+道有多好，心动了就来试试吧!
+</view>

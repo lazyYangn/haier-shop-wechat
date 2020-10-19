@@ -1,0 +1,95 @@
+<view class="detail_swiper">
+    <!-- 轮播图 -->
+    <swiper autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}" interval="1800">
+        <swiper-item wx:for="{{goodsDetail.pics}}" wx:key="id">
+            <image src="{{item.pic}}" mode="widthFix"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<!-- 价格说明 -->
+<view class="price_content">
+    <view class="detail_price">￥{{goodsInfo.minPrice}}</view>
+    <view class="old_price">价格:￥{{goodsInfo.originalPrice}}</view>
+    <view class="detail_content">
+        <view class="name">{{goodsInfo.name}}</view>
+        <view class="fx">
+            <text class="iconfont icon-fenxiang_2"></text>
+            <view class="fenxiang">分享</view>
+            <button open-type="share"></button>
+        </view>
+    </view>
+    <view class="synopsis">{{goodsInfo.characteristic}}</view>
+</view>
+<!-- 有赞担保 -->
+<view class="youzan">
+    <view class="youzan_left">
+        <view class="iconfont icon-zan"></view>
+        <view>有赞担保</view>
+    </view>
+    <view class="youzan_right">已担保,放心买,售后有保障</view>
+</view>
+<!-- 运费 -->
+<view class="freight_wrap">
+    <view class="freight_left">运费</view>
+    <view class="freight_right">免运费</view>
+</view>
+<!-- 服务 -->
+<view class="select_wrap">
+    <view class="serve_content">
+        <view class="serve_left">服务</view>
+        <view class="serve_content">收货后结算·快递发货</view>
+        <view class="iconfont icon-right"></view>
+    </view>
+    <view class="version_content">
+        <view class="version_left">已选</view>
+        <view class="version_content">香槟金色</view>
+        <view class="iconfont icon-right"></view>
+    </view>
+</view>
+<!-- 商品评价 -->
+<view class="evaluate_wrap">
+    <view class="evaluate_left">商品评价</view>
+    <view class="evaluate_right">暂无评价</view>
+</view>
+<!-- 进店 -->
+<view class="store_wrap">
+    <view class="store_img">
+        <image src="https://ae01.alicdn.com/kf/H78b4f1449873416c820558560e9e2ade8.jpg" mode="widthFix"></image>
+    </view>
+    <view class="store_title">
+        <view class="text1">海尔官方旗舰店</view>
+        <view class="title_content">
+            <view class="iconfont icon-qi"></view>
+            <view class="text2">旗舰</view>
+        </view>
+    </view>
+    <navigator class="go_store" url="/pages/index/index" open-type="switchTab">进店逛逛</navigator>
+</view>
+<!-- 商品详情 -->
+<view class="detail_tool">
+    <view class="rivh">
+        <rich-text nodes="{{goodsDetail.content}}"></rich-text>
+    </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-kefu"></view>
+        <view>客服</view>
+        <button open-type="contact"></button>
+    </view>
+    <navigator url="/pages/index/index" class="tool_item">
+        <view class="iconfont icon-dianpu"></view>
+        <navigator url="/pages/index/index" open-type="switchTab">店铺</navigator>
+    </navigator>
+    <navigator class="tool_item" url="/pages/cart/index" open-type="switchTab">
+        <view class="iconfont icon-cart"></view>
+        <view>购物车</view>
+    </navigator>
+    <view class="tool_item btn_cart">
+        <view bindtap="handleCartAdd">加入购物车</view>
+    </view>
+    <view class="tool_itebindm btn_buy">
+        <view bindtap="buyNow">立即购买</view>
+    </view>
+</view>

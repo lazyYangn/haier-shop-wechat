@@ -1,0 +1,45 @@
+<view class="find_header">
+  <navigator url="/pages/index/index" open-type="switchTab">
+    <image src="https://ae01.alicdn.com/kf/H78b4f1449873416c820558560e9e2ade8.jpg" mode="widthFix"></image>
+    <view class="find_header_text">海尔官方旗舰店</view>
+    <view class="find_header_btn">
+      <view class="btn_text">进店</view>
+    </view>
+  </navigator>
+</view>
+<view class="find_content">
+  <view class="content_item" wx:for="{{findList}}" wx:key="id">
+    <view class="find_content_header">
+      <view class="header_time">{{item.date}}</view>
+      <view class="header_like">
+        <view class="iconfont icon-dianzan {{item.isLike?item.fontStyle:''}}" bindtap="handleClick" data-index="{{item.id}}"></view>
+        <view class="like_num" bindtap="handleClick" data-index="{{item.id}}">
+          {{item.likeNum}}
+        </view>
+      </view>
+    </view>
+    <navigator class="find_content_title" url="{{item.url}}">{{item.title}}</navigator>
+    <navigator url="{{item.url}}" class="find_content_text">
+      <view class="text_left">
+        #掌柜说
+        <text class="text_right">{{item.text}}</text>
+      </view>
+    </navigator>
+    <navigator url="{{item.url}}" class="find_content_img">
+      <image src="{{item.mainImg}}" mode="widthFix"></image>
+    </navigator>
+    <navigator class="product_show" url="/pages/detail/index?id={{item.projectId}}">
+      <view class="product_img">
+        <image src="{{item.productImg}}" mode="widthFix"></image>
+      </view>
+      <view class="product_text">
+        {{item.imgText}}
+        <view class="project_price">￥{{item.price}}</view>
+      </view>
+      <view class="product_href">
+        <view class="iconfont icon-youjiantou"></view>
+      </view>
+    </navigator>
+    <view class="find_footer"></view>
+  </view>
+</view>

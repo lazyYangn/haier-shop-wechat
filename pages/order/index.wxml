@@ -1,0 +1,279 @@
+<Tabs tabs="{{tabs}}" bindItemChangeTap="handleItemChangeTap">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="order_wrap">
+      <view class="order_list" wx:if="{{orderList.length==0}}">
+        <image class="" src="https://ae01.alicdn.com/kf/H36ca52c7ce9a4aad8fd0da9cd39b93c34.jpg" mode="widthFix"></image>
+        <view class="order_text">暂无订单</view>
+      </view>
+      <view class="order_list_succ" wx:else>
+        <view class="order_item" wx:for="{{orderList}}" wx:key="index">
+          <view class="order_title">
+            <view class="title_left">
+              <view class="left_title">店铺: 海尔官方旗舰店</view>
+              <view class="left_content">订单编号:{{item.orderNumber}}</view>
+            </view>
+            <view class="title_right">{{item.statusStr}}</view>
+          </view>
+          <view class="order_content">
+            <view class="content_detail">
+              <navigator url="/pages/orderDetail/index?orderId={{item.id}}&statusStr={{item.statusStr}}&orderNumber={{item.orderNumber}}">
+                查看订单详情
+              </navigator>
+            </view>
+            <view class="content_info">
+              <view class="main_price">￥{{item.amount}}</view>
+              <view class="main_sum">X{{item.goodsNumber}}</view>
+            </view>
+          </view>
+          <view class="order_tools">
+            <view class="btn">
+              <button wx:if="{{item.statusStr==='订单关闭'}}" class="cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                取消
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_submit {{item.statusStr==='订单关闭'?'isdisabled':''}}" bindtap="handlePay" data-id="{{item.id}}" disabled="{{item.statusStr==='待支付'?false:true}}">
+                <text>付款</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待发货'}}" class="submit" bindtap="handleSubmit" data-id="{{item.id}}" disabled="{{item.statusStr==='待发货'?false:true}}">
+                <text>确认收货</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_cancel" bindtap="handleClose" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_submit" data-id="{{item.id}}" disabled="{{item.statusStr==='待评价'?false:true}}">
+                <text>评价</text>
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{tabs[1].isActive}}">
+    <view class="order_wrap">
+      <view class="order_list" wx:if="{{orderList.length==0}}">
+        <image class="" src="https://ae01.alicdn.com/kf/H36ca52c7ce9a4aad8fd0da9cd39b93c34.jpg" mode="widthFix"></image>
+        <view class="order_text">暂无订单</view>
+      </view>
+      <view class="order_list_succ" wx:else>
+        <view class="order_item" wx:for="{{orderList}}" wx:key="index" wx:if="{{item.statusStr=='待支付'}}">
+          <view class="order_title">
+            <view class="title_left">
+              <view class="left_title">店铺: 海尔官方旗舰店</view>
+              <view class="left_content">订单编号:{{item.orderNumber}}</view>
+            </view>
+            <view class="title_right">{{item.statusStr}}</view>
+          </view>
+          <view class="order_content">
+            <view class="content_detail">
+              <navigator url="/pages/orderDetail/index?orderId={{item.id}}&statusStr={{item.statusStr}}&orderNumber={{item.orderNumber}}">
+                查看订单详情
+              </navigator>
+            </view>
+            <view class="content_info">
+              <view class="main_price">￥{{item.amount}}</view>
+              <view class="main_sum">X{{item.goodsNumber}}</view>
+            </view>
+          </view>
+          <view class="order_tools">
+            <view class="btn">
+              <button wx:if="{{item.statusStr==='订单关闭'}}" class="cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                取消
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_submit {{item.statusStr==='订单关闭'?'isdisabled':''}}" bindtap="handlePay" data-id="{{item.id}}" disabled="{{item.statusStr==='待支付'?false:true}}">
+                <text>付款</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待发货'}}" class="submit" bindtap="handleSubmit" data-id="{{item.id}}" disabled="{{item.statusStr==='待发货'?false:true}}">
+                <text>确认收货</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_cancel" bindtap="handleClose" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_submit" data-id="{{item.id}}" disabled="{{item.statusStr==='待评价'?false:true}}">
+                <text>评价</text>
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{tabs[2].isActive}}">
+    <view class="order_wrap">
+      <view class="order_list" wx:if="{{orderList.length==0}}">
+        <image class="" src="https://ae01.alicdn.com/kf/H36ca52c7ce9a4aad8fd0da9cd39b93c34.jpg" mode="widthFix"></image>
+        <view class="order_text">暂无订单</view>
+      </view>
+      <view class="order_list_succ" wx:else>
+        <view class="order_item" wx:for="{{orderList}}" wx:key="index" wx:if="{{item.statusStr=='待发货'}}">
+          <view class="order_title">
+            <view class="title_left">
+              <view class="left_title">店铺: 海尔官方旗舰店</view>
+              <view class="left_content">订单编号:{{item.orderNumber}}</view>
+            </view>
+            <view class="title_right">{{item.statusStr}}</view>
+          </view>
+          <view class="order_content">
+            <view class="content_detail">
+              <navigator url="/pages/orderDetail/index?orderId={{item.id}}&statusStr={{item.statusStr}}&orderNumber={{item.orderNumber}}">
+                查看订单详情
+              </navigator>
+            </view>
+            <view class="content_info">
+              <view class="main_price">￥{{item.amount}}</view>
+              <view class="main_sum">X{{item.goodsNumber}}</view>
+            </view>
+          </view>
+          <view class="order_tools">
+            <view class="btn">
+              <button wx:if="{{item.statusStr==='订单关闭'}}" class="cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                取消
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_submit {{item.statusStr==='订单关闭'?'isdisabled':''}}" bindtap="handlePay" data-id="{{item.id}}" disabled="{{item.statusStr==='待支付'?false:true}}">
+                <text>付款</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待发货'}}" class="submit" bindtap="handleSubmit" data-id="{{item.id}}" disabled="{{item.statusStr==='待发货'?false:true}}">
+                <text>确认收货</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_cancel" bindtap="handleClose" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_submit" data-id="{{item.id}}" disabled="{{item.statusStr==='待评价'?false:true}}">
+                <text>评价</text>
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{tabs[3].isActive}}">
+    <view class="order_wrap">
+      <view class="order_list" wx:if="{{orderList.length==0}}">
+        <image class="" src="https://ae01.alicdn.com/kf/H36ca52c7ce9a4aad8fd0da9cd39b93c34.jpg" mode="widthFix"></image>
+        <view class="order_text">暂无订单</view>
+      </view>
+      <view class="order_list_succ" wx:else>
+        <view class="order_item" wx:for="{{orderList}}" wx:key="index" wx:if="{{item.statusStr=='待发货'}}">
+          <view class="order_title">
+            <view class="title_left">
+              <view class="left_title">店铺: 海尔官方旗舰店</view>
+              <view class="left_content">订单编号:{{item.orderNumber}}</view>
+            </view>
+            <view class="title_right">{{item.statusStr}}</view>
+          </view>
+          <view class="order_content">
+            <view class="content_detail">
+              <navigator url="/pages/orderDetail/index?orderId={{item.id}}&statusStr={{item.statusStr}}&orderNumber={{item.orderNumber}}">
+                查看订单详情
+              </navigator>
+            </view>
+            <view class="content_info">
+              <view class="main_price">￥{{item.amount}}</view>
+              <view class="main_sum">X{{item.goodsNumber}}</view>
+            </view>
+          </view>
+          <view class="order_tools">
+            <view class="btn">
+              <button wx:if="{{item.statusStr==='订单关闭'}}" class="cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                取消
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_submit {{item.statusStr==='订单关闭'?'isdisabled':''}}" bindtap="handlePay" data-id="{{item.id}}" disabled="{{item.statusStr==='待支付'?false:true}}">
+                <text>付款</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待发货'}}" class="submit" bindtap="handleSubmit" data-id="{{item.id}}" disabled="{{item.statusStr==='待发货'?false:true}}">
+                <text>确认收货</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_cancel" bindtap="handleClose" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_submit" data-id="{{item.id}}" disabled="{{item.statusStr==='待评价'?false:true}}">
+                <text>评价</text>
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{tabs[4].isActive}}">
+    <view class="order_wrap">
+      <view class="order_list" wx:if="{{orderList.length==0}}">
+        <image class="" src="https://ae01.alicdn.com/kf/H36ca52c7ce9a4aad8fd0da9cd39b93c34.jpg" mode="widthFix"></image>
+        <view class="order_text">暂无订单</view>
+      </view>
+      <view class="order_list_succ" wx:else>
+        <view class="order_item" wx:for="{{orderList}}" wx:key="index" wx:if="{{item.statusStr=='待评价'}}">
+          <view class="order_title">
+            <view class="title_left">
+              <view class="left_title">店铺: 海尔官方旗舰店</view>
+              <view class="left_content">订单编号:{{item.orderNumber}}</view>
+            </view>
+            <view class="title_right">{{item.statusStr}}</view>
+          </view>
+          <view class="order_content">
+            <view class="content_detail">
+              <navigator url="/pages/orderDetail/index?orderId={{item.id}}&statusStr={{item.statusStr}}&orderNumber={{item.orderNumber}}">
+                查看订单详情
+              </navigator>
+            </view>
+            <view class="content_info">
+              <view class="main_price">￥{{item.amount}}</view>
+              <view class="main_sum">X{{item.goodsNumber}}</view>
+            </view>
+          </view>
+          <view class="order_tools">
+            <view class="btn">
+              <button wx:if="{{item.statusStr==='订单关闭'}}" class="cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_cancel" bindtap="handleCancel" data-id="{{item.id}}">
+                取消
+              </button>
+              <button wx:if="{{item.statusStr==='待支付'}}" class="btn_submit {{item.statusStr==='订单关闭'?'isdisabled':''}}" bindtap="handlePay" data-id="{{item.id}}" disabled="{{item.statusStr==='待支付'?false:true}}">
+                <text>付款</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待发货'}}" class="submit" bindtap="handleSubmit" data-id="{{item.id}}" disabled="{{item.statusStr==='待发货'?false:true}}">
+                <text>确认收货</text>
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_cancel" bindtap="handleClose" data-id="{{item.id}}">
+                删除
+              </button>
+              <button wx:if="{{item.statusStr==='待评价'}}" class="btn_submit" data-id="{{item.id}}" disabled="{{item.statusStr==='待评价'?false:true}}">
+                <text>评价</text>
+              </button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</Tabs>
+<view class="recommend_list">
+  <view class="recommend_title">更多精选商品</view>
+  <view class="recommend_project">
+    <view class="project_show">
+      <navigator class="project_item" wx:for="{{projectList}}" wx:key="id" url="/pages/detail/index?id={{item.id}}">
+        <view class="project_img">
+          <image mode="widthFix" src="{{item.pic}}"></image>
+        </view>
+        <view class="project_text">{{item.name}}</view>
+        <view class="project_price">
+          <view class="prcie_text">￥{{item.originalPrice}}</view>
+          <view class="price_cart iconfont icon-cart"></view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

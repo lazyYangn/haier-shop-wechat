@@ -1,0 +1,29 @@
+<view class="address_main">
+    <view class="set_address">
+        <view>
+            收货人：
+            <input type="text" placeholder="收货人姓名" bindinput="inputUserName"></input>
+        </view>
+        <view>
+            手机号码：
+            <input type="text" placeholder="收货人电话" bindinput="inputTel"></input>
+        </view>
+        <view class="section">
+            <view class="section__title">省市区选择器</view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                <view class="picker">当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+            </picker>
+        </view>
+        <view>
+            详细地址：
+            <input type="text" placeholder="请填写详细地址" bindinput="inputAddress"></input>
+        </view>
+        <view>
+            设为默认地址：
+            <view class="body-view">
+                <switch checked="{{true}}" bindchange="switch1Change" />
+            </view>
+        </view>
+    </view>
+</view>
+<button type="primary" plain="{{true}}" bindtap="addAddressInfo">保存并使用</button>

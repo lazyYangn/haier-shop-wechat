@@ -1,0 +1,33 @@
+<view class="title_wrap">养娃就是打怪升级!</view>
+<view class="date_wrap">4月14日</view>
+<view class="synopsis_wrap">
+  作为”过来妈”，送上本轮游戏通关秘籍:
+  <text>提前准备，预先计划，找准源头，选好装备</text>
+  ，让宝妈
+们晋级成“最强王者”!
+</view>
+<view class="number_wrap">
+  <view class="number_border">
+    <view class="number_text">01</view>
+  </view>
+</view>
+<view class="content_wrap">宝宝身体各器官未发育成熟，相比成年人更脆弱
+敏感，日常生活中护理稍不注意，就可能引起宝
+宝生病、不适。</view>
+<view class="content_title">1、呼吸道疾病;</view>
+<view class="content_wrap">
+  婴幼儿的气道狭窄，粘液分泌少，肺弹力组织发
+育差，并且免疫系统尚未发育完善，身体还无法
+产生足够的免疫球蛋白来抵抗细菌、病毒的侵
+害，所以更容易被周围环境影响，引发冒、流鼻
+涕、咳嗽等呼吸道疾病症状。
+  <view>譬如，室内外温度湿度相差大，生活环境中的厨房油烟、过敏源颗粒、装修污染等都是宝宝脆弱呼吸道的潜在危害。</view>
+</view>
+<view class="content_img">
+  <image src="https://ae01.alicdn.com/kf/H8930cea0f3b74c4b85dcfa7eb7cdb9a13.jpg" mode="widthFix"></image>
+</view>
+<view class="content_title">2、皮肤问题;</view>
+<view class="content_wrap">
+  <view>宝宝的皮肤总特别娇嫩、敏感，保水能力也更差。</view>
+  <view>如果长期接触不干净的衣物、布料，对宝宝皮肤屏障产生刺激，过敏、尿布疹、红疹、湿疹各种皮肤病就会找上门来。</view>
+</view>

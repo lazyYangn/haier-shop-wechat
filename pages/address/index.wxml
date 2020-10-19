@@ -1,0 +1,29 @@
+<view class="address_main">
+  <view class="address_wrap" bindtap="handleChooseAddress">
+    <view class="iconfont icon-weixin left"></view>
+    <view class="get_address">获取微信收货地址</view>
+    <view class="iconfont icon-right right"></view>
+  </view>
+  <view class="get_address" bindtap="handleDefault">获取默认收货地址</view>
+  <view class="set_address">
+    <view>
+      收货人：
+      <input type="text" placeholder="收货人姓名" value="{{userName}}" bindinput="inputUserName"></input>
+    </view>
+    <view>
+      手机号码：
+      <input type="text" placeholder="收货人电话" value="{{telNumber}}" bindinput="inputTel"></input>
+    </view>
+    <view>
+      所在地区：
+      <input type="text" placeholder="省/市/区" value="{{address}}" bindinput="inputCity"></input>
+    </view>
+    <view>
+      详细地址：
+      <input type="text" placeholder="请填写详细地址" value="{{detailInfo}}" bindinput="inputAddress"></input>
+    </view>
+  </view>
+</view>
+<navigator class="addrss_btn" url="/pages/pay/index?userName={{userName}}&telNumber={{telNumber}}&address={{address}}&detailInfo={{detailInfo}}&isShow=false">
+  <view>保存并使用</view>
+</navigator>

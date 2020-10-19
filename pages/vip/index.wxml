@@ -1,0 +1,10 @@
+<view class="vip_wrap">
+  <view class="vip_header">
+    <image mode="widthFix" src="{{iconAddress}}"></image>
+    <view class="vip_name">{{userName}}</view>
+  </view>
+  <view class="vip_code">
+    <image class="code1" src="https://ae01.alicdn.com/kf/H56ce696744e6414da2ced730c05817a9M.jpg" mode="aspectFit"></image>
+    <image class="code2" src="https://ae01.alicdn.com/kf/Ha9f0bc0778724bbf80e5e3d2f97475fdj.jpg" mode="widthFix"></image>
+  </view>
+</view>

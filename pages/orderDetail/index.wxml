@@ -1,0 +1,29 @@
+<view class="order_wrap">
+    <view class="order_list_succ">
+        <view class="order_item">
+            <view class="order_title" wx:for="{{orderList}}" wx:key="index">
+                <view class="title_left">
+                    <view class="left_title">店铺: 海尔官方旗舰店</view>
+                    <view class="left_content">订单编号:{{orderNumber}}</view>
+                </view>
+                <view class="title_right">{{statusStr}}</view>
+            </view>
+            <view class="order_content" wx:for="{{orderInfo.goodsMap[orderId]}}" wx:key="index">
+                <view class="content_img">
+                    <image mode="widthFix" src="{{item.pic}}" />
+                </view>
+                <view class="content_info">
+                    <view class="info_title">{{item.goodsName}}</view>
+                    <view class="info_main">
+                        <view class="main_price">￥{{item.amountSingle}}</view>
+                        <view class="main_sum">X{{item.number}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="order_sum">
+                合计:
+                <text>￥{{orderInfo.goodsMap[orderId][0].amount}}</text>
+            </view>
+        </view>
+    </view>
+</view>

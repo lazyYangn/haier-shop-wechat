@@ -1,0 +1,105 @@
+<view class="user">
+  <view class="user_header">
+    <image src="https://ae01.alicdn.com/kf/H5bf17b1342f746c4a3a4860e91d9803ao.jpg" mode="widthFix"></image>
+    <view class="header_title">
+      <!-- 签到按钮 -->
+      <view class="header_sign">
+        <view class="iconfont icon-shuxiebianji"></view>
+        <view class="sign_text">签到</view>
+      </view>
+      <!-- 会员 -->
+      <navigator class="header_vip" url="/pages/vip/index">
+        <view class="iconfont icon-ico"></view>
+        <view class="header_vip_text">会员</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="user_info">
+    <view class="info_img">
+      <block wx:if="{{userName.length===0}}">
+        <image src="https://ae01.alicdn.com/kf/H4f76b487e9924b4d9d7036ad82664c53H.jpg" mode="widthFix" bindtap="getIcon"></image>
+        <button open-type="getUserInfo" bindgetuserinfo="getIcon"></button>
+      </block>
+      <block wx:else>
+        <image src="{{iconAddress}}" mode="widthFix"></image>
+      </block>
+    </view>
+    <view class="info_text">
+      <view class="info_text_content" bindtap="getIcon">
+        <block wx:if="{{userName.length===0}}">
+          点击显示头像
+          <!-- <button open-type="getUserInfo" bindgetuserinfo="getIcon"></button> -->
+          <button></button>
+        </block>
+        <block wx:else>{{userName}}</block>
+      </view>
+      <vew class="info_text_btn">成长值0</vew>
+    </view>
+  </view>
+  <view class="become_vip">
+    <view class="vip_img">
+      <image src="https://ae01.alicdn.com/kf/H93ca04fb344f4a1785ff6b5639d7b114x.jpg" mode="widthFix"></image>
+    </view>
+    <view class="vip_left_text">成为会员，领100积分，享包邮特权</view>
+    <view class="vip_right_text">
+      立即注册
+      <view class="iconfont icon-youjiantou"></view>
+    </view>
+  </view>
+  <view class="user_main">
+    <!-- 用户的账户信息 -->
+    <view class="user_main_info">
+      <view class="info_item" wx:for="{{userInfo}}" wx:key="id">
+        <view class="info_item_num">{{item.value}}</view>
+        <view class="info_item_name">{{item.name}}</view>
+      </view>
+    </view>
+    <!-- 订单 -->
+    <view class="user_main_indent">
+      <navigator class="indent_title" url="/pages/order/index?id=0">
+        <view class="indent_title_left">我的订单</view>
+        <view class="indent_title_right">
+          <view>查看全部订单</view>
+          <view class="iconfont icon-youjiantou"></view>
+        </view>
+      </navigator>
+      <view class="indent_content">
+        <navigator class="content_item" wx:for="{{indentList}}" wx:key="id" url="{{item.url}}">
+          <view class="item_icon iconfont {{item.icon}}"></view>
+          <view class="item_text">{{item.name}}</view>
+          <view class="item_num" wx:if="{{item.count!=0}}">{{item.count}}</view>
+          <view wx:else></view>
+        </navigator>
+      </view>
+    </view>
+    <!--  -->
+    <view class="user_main_details">
+      <navigator class="main_details_item" wx:for="{{detailList}}" wx:key="id" url="{{item.url}}" open-type="{{item.type}}">
+        <view class="left iconfont {{item.icon}}"></view>
+        <view class="info_item_text">{{item.name}}</view>
+        <view class="right iconfont icon-right"></view>
+      </navigator>
+    </view>
+    <!-- 收货地址 -->
+    <navigator class="user_main_address" url="/pages/addressList/index">
+      <view class="main_address_item">
+        <view class="left iconfont icon-location_light"></view>
+        <view class="address_item_text">收货地址</view>
+        <view class="right iconfont icon-right"></view>
+      </view>
+    </navigator>
+    <!-- 个人信息设置 -->
+    <view class="user_main_person">
+      <view class="main_person_item">
+        <view class="left iconfont icon-my_light"></view>
+        <view class="person_item_text">个人信息</view>
+        <view class="right iconfont icon-right"></view>
+      </view>
+      <view class="main_person_item">
+        <view class="left iconfont icon-friend_settings_light"></view>
+        <view class="person_item_text">信息设置</view>
+        <view class="right iconfont icon-right"></view>
+      </view>
+    </view>
+  </view>
+</view>

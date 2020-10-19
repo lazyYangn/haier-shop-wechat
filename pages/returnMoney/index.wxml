@@ -1,0 +1,7 @@
+<view class="return_wrap">
+  <view class="font1">哎呀,还没返现</view>
+  <view class="font2">逛一逛,发现更多返现活动</view>
+  <navigator url="/pages/index/index" open-type="switchTab">
+    <view>去逛逛</view>
+  </navigator>
+</view>

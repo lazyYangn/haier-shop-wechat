@@ -1,0 +1,7 @@
+<view class="return_wrap">
+  <view class="font1">居然还没有赠品</view>
+  <view class="font2">好东西,手慢无</view>
+  <navigator url="/pages/index/index" open-type="switchTab">
+    <view>去逛逛</view>
+  </navigator>
+</view>

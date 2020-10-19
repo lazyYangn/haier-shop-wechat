@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/orderDetail/index",
+    "pages/addressList/index",
+    "pages/addressModify/index",
+    "pages/addAddress/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/find/index",
+    "pages/user/index",
+    "pages/search/index",
+    "pages/vip/index",
+    "pages/order/index",
+    "pages/refund/index",
+    "pages/returnMoney/index",
+    "pages/address/index",
+    "pages/pay/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "海尔官方旗舰店",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#FF4444",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-fill.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "icons/category.png",
+        "selectedIconPath": "icons/category-fill.png"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "text": "发现",
+        "iconPath": "icons/find.png",
+        "selectedIconPath": "icons/find-fill.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cart-fill.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/user.png",
+        "selectedIconPath": "icons/user-fill.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,105 @@
+pages {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .container {
+  height: (100vh-90rpx);
+  display: flex;
+}
+.cates .container .left_menu {
+  flex: 2;
+  background-color: #eeeeee;
+}
+.cates .container .left_menu .left_menu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777777;
+  font-size: 30rpx;
+}
+.cates .container .right_content {
+  flex: 5;
+}
+.cates .container .right_content .right_content_title1 {
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 36rpx;
+}
+.cates .container .right_content .content_nav1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .container .right_content .content_nav1 .nav1 {
+  width: 33.33%;
+  padding: 15rpx;
+}
+.cates .container .right_content .content_nav1 .nav1 image {
+  width: 100%;
+}
+.cates .container .right_content .content_nav1 .nav1 .list_name1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cates .container .right_content .right_content_title2 {
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 36rpx;
+}
+.cates .container .right_content .content_nav2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .container .right_content .content_nav2 .nav2 {
+  width: 33.33%;
+  padding: 15rpx;
+}
+.cates .container .right_content .content_nav2 .nav2 image {
+  width: 100%;
+}
+.cates .container .right_content .content_nav2 .nav2 .list_name2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cates .container .right_content .right_content_title3 {
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 36rpx;
+}
+.cates .container .right_content .content_nav3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .container .right_content .content_nav3 .nav3 {
+  width: 33.33%;
+  padding: 15rpx;
+}
+.cates .container .right_content .content_nav3 .nav3 image {
+  width: 100%;
+}
+.cates .container .right_content .content_nav3 .nav3 .list_name3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cates .container .last {
+  height: 600rpx;
+}
+.active {
+  font-weight: 700;
+  border-left: 5rpx solid red;
+  background-color: #fff;
+}

@@ -1,0 +1,91 @@
+page {
+    background-color: #f9f9f9;
+}
+.order_wrap {
+    width: 100%;
+    margin-top: 20rpx;
+    .order_list_succ {
+        .order_item {
+            margin-bottom: 20rpx;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            .order_title {
+                height: 90rpx;
+                padding: 10rpx;
+                margin-bottom: 20rpx;
+                display: flex;
+                .title_left {
+                    flex: 5;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .left_title {
+                        font-size: 32rpx;
+                        font-weight: 400;
+                    }
+
+                    .left_content {
+                        font-size: 28rpx;
+                        color: #666666;
+                    }
+                }
+
+                .title_right {
+                    flex: 2;
+                    color: orangered;
+                    font-size: 32rpx;
+                }
+            }
+
+            .order_content {
+                background-color: #f9f9f9;
+                padding: 10rpx;
+                display: flex;
+                .content_img {
+                    flex: 2;
+                    image {
+                        width: 100%;
+                    }
+                }
+
+                .content_info {
+                    flex: 4;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .info_title {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                    }
+
+                    .info_main {
+                        padding: 0 20rpx;
+                        display: flex;
+                        justify-content: space-between;
+                        .main_price {
+                            font-size: 32rpx;
+                            font-weight: 600;
+                            color: orangered;
+                        }
+
+                        .main_sum {
+                        }
+                    }
+                }
+            }
+
+            .order_sum {
+                padding: 20rpx;
+                text-align: right;
+                font-size: 32rpx;
+                border-bottom: 1px solid #eee;
+                text {
+                    color: orangered;
+                }
+            }
+        }
+    }
+}

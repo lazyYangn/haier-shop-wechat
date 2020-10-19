@@ -1,0 +1,9 @@
+<view class="refund_wrap">
+  <view class="refund_img">
+    <image src="https://ae01.alicdn.com/kf/H7acb307e5ff64ef497135b5e28f80669M.jpg" mode="widthFix" />
+  </view>
+  <view class="refund_text">
+    <view>暂无售后申请</view>
+    <view>你对购买的商品都很满意</view>
+  </view>
+</view>

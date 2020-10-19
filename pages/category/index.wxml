@@ -1,0 +1,34 @@
+<view class="cates">
+    <Search></Search>
+    <view class="container">
+        <scroll-view class="left_menu">
+            <view wx:for="{{leftMenu}}" wx:key="id" class="left_menu_item {{index === curtIndex?'active':''}}" bindtap="handleChange" data-index="{{index}}" scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+                {{item.name}}
+            </view>
+        </scroll-view>
+        <scroll-view class="right_content">
+            <view class="right_content_title1">客厅</view>
+            <view class="content_nav1">
+                <navigator wx:for="{{saloonMenu}}" wx:key="name" url="/pages/list/index?id={{item.id}}" open-type="navigate" class="nav1">
+                    <image src="{{item.icon}}" mode="widthFix"></image>
+                    <view class="list_name1">{{item.name}}</view>
+                </navigator>
+            </view>
+            <view class="right_content_title2">厨房</view>
+            <view class="content_nav2">
+                <navigator wx:for="{{kitchenMenu}}" wx:key="name" url="/pages/list/index?id={{item.id}}" open-type="navigate" class="nav2">
+                    <image src="{{item.icon}}" mode="widthFix"></image>
+                    <view class="list_name2">{{item.name}}</view>
+                </navigator>
+            </view>
+            <view class="right_content_title3">卫生间</view>
+            <view class="content_nav3">
+                <navigator wx:for="{{tolietMenu}}" wx:key="name" url="/pages/list/index?id={{item.id}}" open-type="navigate" class="nav3">
+                    <image src="{{item.icon}}" mode="widthFix"></image>
+                    <view class="list_name3">{{item.name}}</view>
+                </navigator>
+            </view>
+            <view class="last"></view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,109 @@
+<view class="title_wrap">焕新家电，乐享肥宅生活!</view>
+<view class="date_wrap">4月10日</view>
+<view class="synopsis_wrap">
+  2020年疫情原因，原本想浪的心也骤然平息了，很多
+人安慰自己，趁着这- - 阵就在家好好休息-一下。但是奈
+何在家左右徘徊，无疑各种问题就来了，家里的电器好
+像都不是很给力啊，让人觉得在家也不是很自在呢!平
+时上班能忍就忍了，但是想想以后还要继续忍受各种问
+题频出的电器，还不如早点换个新的，是否你也有相同
+的想法呢?
+  <view>
+    其实，在家也可以很舒服，一些肥宅生活得照样有
+滋有味。作为现代人，家电或许是生活必不可少的，只
+要选择合适的家电，生活就会大不同，平时方便了不
+说，假期也可以好好休息保养自己啦!并且可以趁着给
+家里来个大扫除，做点有意义的事情，让自己居住的空
+间看起来也顺眼。
+  </view>
+</view>
+<view class="project_img">
+  <image mode="widthFix" src="https://ae01.alicdn.com/kf/H10fb3c2f0f8443778866fd6a3bdb2f84c.jpg"></image>
+</view>
+<view class="synopsis_wrap">
+  打开我肥宅快乐体验的第一步就是有个称心如意的
+大冰箱，海尔这款大冰箱就像大白一样，如暖男般的存
+在。简约时尚的外表下隐藏着576L的巨大容量，所以
+想屯多少屯多少。采用升级的变频压缩机，绝对安全也
+不用操心而且静音又省电。低温净味系统，食材绝对新
+鲜。海尔风冷无霜科技，节约空间又摆脱除霜烦恼。快
+速冷冻，锁住营养，肥宅也可以吃的很健康。大体积，
+薄机身，主流竖向显示屏，真的是像大白一样无微不至
+的存在啊!
+</view>
+<navigator class="project_show" url="{{projectList[0].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[0].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[0].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
+<view class="synopsis_wrap">
+  让我更加能着迷肥宅生活的或许是因为在家真的非
+常惬意啊!相信如果没有一个好的空调，一个肥宅也做
+不好真正的肥宅。据肥宅说，阻挠我出去的不是人，而
+是天，而在家里，我就是天。一个好空调，绝对能给主
+人达到“天”一般的体验。这款空调是R410a新冷媒技
+术，能够多维立体送风，快速冷暖，方便不将就。除湿
+辅热两不误，慵懒时光，给你极致舒适。这才是美好生
+活该有的样子嘛!
+</view>
+<navigator class="project_show" url="{{projectList[1].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[1].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[1].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
+<view class="synopsis_wrap">
+  或许肥宅担心的一一个大问题就是家务了，尤其是其
+中最麻烦的洗衣服，即使一件衣服也懒得动手啊。没关
+系，有了一台合适的智能洗衣机，洗衣服这件事不再烦
+恼!海尔这款洗衣机，采用巴氏灭菌，三层强力除菌，
+给你健康加分。高效洁净同时保护衣物，给你的颜值加
+分。洁净的自净系统和升级静漂系统，无需担心污渍残
+留。正能平衡系统，岿然不动就这么静静的洗着，绝对
+不会打扰到你。而且香槟金的外表看着就挺高大上的，
+生活也有了情调感。
+</view>
+<navigator class="project_show" url="{{projectList[2].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[2].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[2].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
+<view class="synopsis_wrap">
+  除此之外，作为肥宅最快乐的就是自由舒适的娱乐
+时光了，瘫在沙发上，追追剧看看综艺，吃点小零食，
+在繁忙中的休息才让段时光更有意义。 一台高清智能液
+晶电视绝对能给你全面体验。50英寸4K高清，在家就
+能享受影院级观看体验;智能人工芯片提供智能检索，
+想怎么看就怎么看。无论是好莱坞大片还是韩剧日剧，
+热门综艺，看你想看。简约操作，语音遥控电视，喊一一
+声就0K;此外，其纤薄机身，更是加强视觉享受，
+肥宅生活可十分享受!
+</view>
+<navigator class="project_show" url="{{projectList[3].url}}">
+  <view class="item_img">
+    <image mode="widthFix" src="{{projectList[3].imgUrl}}"></image>
+  </view>
+  <view class="item_content">
+    <view class="text">{{projectList[3].name}}</view>
+    <view class="btn">
+      <view>去购买</view>
+    </view>
+  </view>
+</navigator>
